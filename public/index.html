@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>TopShelf</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+	<script src="./app.js"></script>
+</head>
+<body ng-app ="topshelf" ng-controller="MainCtrl" class="top-navigation">
+	<div id="wrapper">
+		<div id="page-wrapper" class="gray-bg" ui-view>
+			<div class="row border-bottom white-bg">
+				<nav class="navbar navbar-static-top" role="navigation">
+					<div class="navbar-header">
+						<a href="#" class="navbar-brand">TopShelf</a>
+					</div>
+					<div class="navbar-collapse collapse" id="navbar">
+						<ul class="nav navbar-nav">
+							<li>
+								<div class="navbar-header">
+									<div class="form-group">
+										<form>
+											<input id="top-form" type="text" name="top-search" class="form-control" id="top-search" placeholder="Search for something..." ng-model="search">
+										</form>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<ul class="nav navbar-top-links navbar-right">
+							<li>
+								<a href="login.html">
+									<i class="fa fa-sign-out"></i> Log out
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				</div>
+				<div class="wrapper wrapper-content">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Ingredients</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Ingredient</th>
+                                            <th>Quantity</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<tr ng-repeat="ingredients in Mydata">
+                                    		<td>{{ingredients.name}} </td>
+                                    		<td>{{ingredients.quantity}} </td>
+                                    		<td> <a ng-click="edit(ingredients.name, ingredients.quantity)">  Edit </a>/ <a ng-click="delete(ingredients.name)" >Delete</a></form></td>
+                                    	</tr>
+                                    </tbody>
+                                </table>
+                        	</div>
+                        </div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="ibox float-e-margins">
+	                    <div class="ibox-title">
+	                        <h5>Ajouter un ingrédient</h5>
+	                    </div>
+	                    <div class="ibox-content">
+							<form action="/add" method="POST" class="form-horizontal">
+							<div class="form-group">
+								<input type="text" name="name" placeholder="ingredient">
+								<input type="number" name="quantity" placeholder="quantity">
+								<input type="submit" value="add" class="btn btn-primary">
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="ibox float-e-margins">
+	                    <div class="ibox-title">
+	                        <h5>Editer un ingrédient</h5>
+	                    </div>
+	                    <div class="ibox-content">
+							<form class="form-horizontal">
+							<div class="form-group">
+								<input type="text" name="editname" placeholder="ingredient" ng-model="ingr">
+								<input type="number" name="editquantity" placeholder="quantity" ng-model="qty">
+								<input type="submit" value="Update" class="btn btn-primary" ng-click="send(ingr)">
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "labelleassiette",
+  "version": "2.0.1",
+  "homepage": "http://labelleassiette.fr",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LaBelleAssiette/jobs.git"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "angular-ui-router": "^0.3.2",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.6"
+  },
+  "engines": {
+    "node": ">=6.9.x"
+  },
+  "description": "Chef Amit is confronted to a big problem: due to his incredible number of bookings, maintaining a count of everything he has in his huge kitchen became a pain. He would like a web application to help him manage an inventory of all the ingredients he posseses.",
+  "bugs": {
+    "url": "https://github.com/LaBelleAssiette/jobs/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rayed",
+    "test"
+  ],
+  "author": "Rayed Benbrahim",
+  "license": "ISC"
+}

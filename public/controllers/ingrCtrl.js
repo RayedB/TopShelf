@@ -1,0 +1,1 @@
+angular.module('topshelf').controller('ingrController', Controller)
